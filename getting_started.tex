@@ -63,7 +63,9 @@ When the bar is at 100 \%, then you get a message that the project has been succ
 \end{figure}
 
 Double-click on that row (or click on "Open selected button" below), so the project opens in TIDE, you will be able to work on it. Each project opened in TIDE has more pages, now you can see its Level Manager page. (See the panel header which names the current project.)
-\par Now click on the red arrow in the upper left corner of the page, to go back to TIDE Start page, closing this project now in TIDE. (Since TEN 1.7., you can see the blue TIDE icon in that corner, instead of the red arrow. If you click on that icon, then a menu opens. One of the menu options is an arrow, with "Back to Start Window..." name. Click on it to go back to TIDE Start page.) \cite{akyv_tutorial}
+% \par Now click on the red arrow in the upper left corner of the page, to go back to TIDE Start page, closing this project now in TIDE. (Since TEN 1.7., you can see the blue TIDE icon in that corner, instead of the red arrow. If you click on that icon, then a menu opens. One of the menu options is an arrow, with "Back to Start Window..." name. Click on it to go back to TIDE Start page.) \cite{akyv_tutorial} % Referring to old version, changed to fit latest version
+\par Now click on the blue TIDE icon in the upper left corner of the page, then a menu opens. One of the menu options is an arrow, with "Back to Start Window..." name. Click on it to close this project now, going back to TIDE Start page.
+\cite{akyv_tutorial}
 
 \chapter{What is a level?}
 Before we discuss how to start a new level, important to understand, that actually what a "level" is.
@@ -122,3 +124,56 @@ When you start building a new level for your project, then these are your tasks,
 \item Convert the PRJ2 level map into a TEN playable level.
 \item Start the level in the game, try what you have just edited in the map.
 \end{enumerate} \cite{akyv_tutorial}
+
+\chapter{Starting a new level map}
+
+\section{Using TombIDE wizard}
+
+\begin{enumerate}
+    \item Open the "Lara Newest Adventures" project in TIDE, remaining on Level Manager page.
+    \item See the left big window here, with the title of "Level list". As the text says in it, click on it, or - because the text is not available when there is at least one level in this window - click on the "+" button on the upper left corner of the window.
+    \item The panel of "Create a New Level" opens (\ref{fig:tide7}):
+    \begin{itemize}
+        \item \textbf{Level Name}: this level name will be shown in the game for this level. Let's say it is "Test Level 1" now.
+        \item \textbf{Use custom PRJ2 / DATA name}: if you tick it, then you can add an alternative name key instead of the default one. \\ Name keys are the names of the most important files of this level. The default name key is mostly the Level Name, except: there cannot be spaces. So eg. for Test Level 1, level files will be auto-created with this name key later: Test\_Level\_1.prj2, Test\_Level\_1.ten etc. \\ Let's suppose we don't want the default name key now, so tick the option and type "Test1" as the name key. (So the file names will be Test1.prj2, Test1.ten etc.)
+        \item \textbf{Generate Lua script}: as I said above, there is a scripted part even for TEN. If you untick it, then the wizard will skip this part, not creating the needful contents of the level script. So later you have to create it manually (but before starting the level at the very first time in the game).
+        % \\ (The option name is a bit misleading, though, Script.txt and [Level] section are presented in a bit different way for TEN. But it doesn't matter.)%
+        \\ Some values in the scripted part you need to define now:
+\begin{itemize}
+    \item \textbf{Ambient sound ID}: the initial ambient background noise of the level. I suggest accepting this 110.wav now, because later you can change it any time. Or you can click on Open /audio/ button to open Engine \textbackslash Audio subfolder in the project main folder now, to try to find another one. \footnote{Audio subfolder has the original audio file set of The Last Revelation game. Later you can change the contents any time. Now I suggest choosing a WAV above 100 value here, because in that set, background noises are placed on those IDs. However, for TEN you can use any ID for a background noise - but we won't discuss it in this tutorial.}
+    \item \textbf{Enable HORIZON (Make the skybox visible in the level)}: the sky above you can be visible in the outdoor areas of the level only if it is ticked. I suggest ticking it, because later you can change it any time. footnote{Skybox and horizon are working together, but they are not the same. But it doesn't matter now.}
+
+\begin{figure}
+    \centering
+     \includegraphics[width=0.75\textwidth]{screenshots/7.jpg}
+     \caption{\emph{Create a New Level} panel}
+     \label{fig:tide7}
+\end{figure}
+
+
+
+\end{itemize}
+\end{itemize}
+\item Click on Create button.
+\end{enumerate}
+
+What happened now are:
+\begin{itemize}
+    \item As I said, each level should have a folder dedicated to it, in Levels folder of this project. Now a dedicated folder to Test Level 1 automatically has been created there, having this level name.
+    \item A Test1.prj2 file has been also automatically created, in Test Level 1 folder.
+    \item The main settings of this level have also been done properly.
+    \item Some crucial attachments of the level has been automatically attached. (Later we discuss it in the tutorial.)
+    \item In Level list window of this project (on Level Manager TIDE page), a row for this level has been also automatically created (\ref{fig:tide8}).
+    
+\begin{figure}
+    \centering
+     \includegraphics[width=0.75\textwidth]{screenshots/8.jpg}
+     \caption{\emph{Level list} panel showing level you've created}
+     \label{fig:tide8}
+\end{figure}
+
+    \item The needful contents of the level script has been also automatically created. (Later we discuss it in the tutorial.)
+
+\end{itemize}
+Now you can click on the arrow menu option in the menu of the blue TIDE icon to go back to the Start page of TIDE.
+%\\ But TIDE now asks you if you want to save what you have just did. Naturally accept it. \\ (However, operations you did in TIDE are automatically saved. Except if those are rows typed in the script.) % It was not asked to save by the application during testing of this tutorial...
