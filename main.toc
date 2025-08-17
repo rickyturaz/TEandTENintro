@@ -1,0 +1,10 @@
+\babel@toc {english}{}\relax 
+\contentsline {part}{I\hspace {1em}Introduction}{5}{}%
+\contentsline {chapter}{\numberline {1}History of Tomb Raider Level Editor}{7}{}%
+\contentsline {section}{\numberline {1.1}Back to 2000: \emph {Tomb Raider Level Editor}}{7}{}%
+\contentsline {section}{\numberline {1.2}Paolone's \emph {TRNG}}{8}{}%
+\contentsline {section}{\numberline {1.3}MontyTRC89's \emph {Tomb Editor}}{8}{}%
+\contentsline {part}{II\hspace {1em}Principles of game development}{9}{}%
+\contentsline {chapter}{\numberline {2}Beta testing}{11}{}%
+\contentsline {section}{\numberline {2.1}In General}{11}{}%
+\contentsline {section}{\numberline {2.2}Alpha Testing}{12}{}%
