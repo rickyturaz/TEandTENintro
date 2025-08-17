@@ -1,6 +1,6 @@
 \part{Getting started}
 \chapter{Installing Tomb Editor}
-First of all, you need to download and install the Tomb Editor pack on your computer. wIt is available eg. \href{https://tombengine.com/}{here}.
+First of all, you need to download and install the Tomb Editor pack on your computer. It is available eg. \href{https://tombengine.com/}{here}.
 \par The default route of Tomb Editor installed is \path{C:\Tomb Editor}. The contents of this main folder are:
 \begin{itemize}
     \item Tomb Editor program.
@@ -64,3 +64,62 @@ When the bar is at 100 \%, then you get a message that the project has been succ
 
 Double-click on that row (or click on "Open selected button" below), so the project opens in TIDE, you will be able to work on it. Each project opened in TIDE has more pages, now you can see its Level Manager page. (See the panel header which names the current project.)
 \par Now click on the red arrow in the upper left corner of the page, to go back to TIDE Start page, closing this project now in TIDE. (Since TEN 1.7., you can see the blue TIDE icon in that corner, instead of the red arrow. If you click on that icon, then a menu opens. One of the menu options is an arrow, with "Back to Start Window..." name. Click on it to go back to TIDE Start page.) \cite{akyv_tutorial}
+
+\chapter{What is a level?}
+Before we discuss how to start a new level, important to understand, that actually what a "level" is.
+\emph{(Don't do anything now, just read and listen.)}
+\section{Level map}
+Level maps are the editable versions of levels. So when you create, modify a level in the level editor program, then the changes are saved and stored in level map files.
+ TE has its own level map formula, whose extension is called \path{PRJ2}.\footnote{Previously level map files was known as files with \path{PRJ} extension.}
+ \par At the moment you don't have PRJ2 files, but soon you will create them and save them in Levels folder of the project main folder. (In fact, in subfolders of Levels folder, and each subfolder is dedicated only to one level of the project, having a name which nicely refers to the level name.)
+ \section{Playable level}
+ The playable version of the level is a level file what the game will play as a level. This playable file is made by a conversion, converted from the PRJ2 level map file of this level. (The conversion will be a very simple task to you: only a simple click on a button.)
+ \section{Crucial attachments}
+ Literally or "only" technically, but levels are useless without their crucial attachments. (Which you will attach in TE to the level map. Then you need to save the map to keep it.)
+\begin{itemize}
+    \item Item files
+    \item Texture files
+    \item Sound files and their catalog
+    \item Level script
+\end{itemize}
+\subsection{Item files}
+An item file (attached to a level) contains all the Moveable and Static objects (Lara, creatures, statues, furniture, effect emitters etc.) and sprites \footnote{In computer graphics, a \textbf{sprite} is a two-dimensional bitmap that is integrated into a larger scene, most often in a 2D video game. \cite{sprite_wikipedia} \index{Sprite}} which can be used in that level.
+In TE you can select more than one item file for a level. (And if an object is there in both, then you can set which one of them should be applied in the level.)
+%\footnote{Unlike the older editors, where only one item file could be selected per level.}%
+\begin {itemize}
+    \item \par Builders using TRLE/NGLE previously definitely know that the extension of an item file is \path{WAD}, acronym standing for \emph{Where's All the Data?} \footnote{WAD is generally a main architectural component of retro games - see e.g. \url{https://en.wikipedia.org/wiki/Doom_modding} for usage in \emph{Doom} custom games.}, made/edited probably with WadMerger program. But it is not obvious any more, if your level editor program is Tomb Editor. In TE WAD extension is usually supported, but not preferred.
+    \item \path{WAD2} extension means an enhanced item file (eg. with the feature of UV-mapping \footnote{\textbf{UV mapping} is the 3D modeling process of projecting a 3D model's surface to a 2D image for texture mapping. The letters "U" and "V" denote the axes of the 2D texture because "X", "Y", and "Z" are already used to denote the axes of the 3D object in model space. \cite{UV_mapping_wikipedia} \index{UV mapping}} which is not possible in WAD files). WAD2 files are made and useable only for TE levels, it is the preferred extension here. \\ There is a tool in TE pack dedicated to edit item files, called WadTool. Just open a WAD in it, and save it. It will be saved automatically as a WAD2 item file. (Or you can naturally arrange even a brand new WAD2 in WadTool.)
+    \item TEN engine is able to use only specific WAD2 files, which means WAD extension is not supported for TEN engine. (Except if WAD has only objects having non-TEN specific behaviors, like Statics.) \\ You can find a menu option in WadTool, to convert your other item files into a TEN WAD2. \\ "Specific" means eg. TEN Lara object is optimized for TEN, so a "casual" (non-TEN) Lara would not be animated properly there. (Later we discuss it in this tutorial - but not the details, because it is not a TEN WAD2 tutorial.)
+\end{itemize}
+WAD2 files for a TEN level should be placed in Levels folder, in the subfolder of that level. (It is recommended to use a sub-subfolder there for it.) - Though, technically it is not a must, they can be placed even anywhere in your computer.
+\subsection{Texture files}
+A texture \footnote{A \emph{texture map} \index{Texture map} refers to a 2D image ("texture") that adds visual detail to a 3D model. The image can be stored as a raster graphic. A texture that stores a specific property—such as bumpiness, reflectivity, or transparency—is also referred to as a \emph{color map} or \emph{roughness map}. \cite{texture_mapping_wikipedia}} file (attached to a level) contains all the texture tiles which can be placed on room faces (floor sector, ceiling sector, wall section) in that level.
+\par In TE:
+\begin{itemize}
+    \item you can select more than one texture file for a level, placing tiles even from each in your level,
+    \item not only TGA extension is supported for texture files, but even other ones: BMP, JPG, PNG etc.
+\end{itemize}
+Texture files for a TEN level should be placed in Levels folder, in the subfolder of that level. (It is recommended to use a sub-subfolder there for it.) - Though, technically it is not a must, they can be placed even anywhere in your computer.
+\subsection{Sound files and their catalog files}
+Sounds saved in sound files can be emitted mostly by Moveable objects (mostly Lara or other creatures), but even by any effect (like a rumbling earthquake). Etc.
+\par Sound files have WAV extensions - just like in the old times.
+\par Sound files are not directly attached to a level map, for two reasons:
+\begin{itemize}
+    \item Sound files for a TEN level should be placed in Sounds subfolder of project main folder. (Though, technically it is not a must, they can be placed even anywhere in your computer.) Initially you can find all the original sounds here of the legacy engines, in their own subfolders. - But naturally you are allowed to edit these contents, modifying, deleting, adding sound files here. \\ These places are needed to be attached to that level.
+    \item There must be one catalog file (or, unlike the older editors, even more catalog files), attached to the level, where the sounds you want to attach are named. The main reason is that sounds can have different properties for different levels, and the catalog will describe the properties that this sound will have on this level \\ Sound catalogs can be even older types, familiar from TRLE/NGLE (Sounds.txt or SFX/SAM files of WAD files), or the ones having XML extensions, which are made for TE. Later you will be able to make custom XML files, but some of them are created when saving a WAD2 file. And there are even some preset XML catalogs in Catalogs/TEN Sound Catalogs subfolder of Tomb Editor main folder. \\ There is a tool in TE pack dedicated to edit sound catalogs, called SoundTool. If you want, just open a non-XML catalog into it, and save it as an XML one.
+\end{itemize}
+\subsection{Level script}
+Script means game or level data, described simply by typing some texts.
+There is a tool in TE pack dedicated to edit script. This is TIDE you have already used to create your project, and you definitely will use it later much to edit your script. \footnote{In TRLE or NGLE there is a "level block" in the script, where all the scripted data of that level are typed. In TE it works the same way - except if the engine for your TE project is TEN. In that case script works a bit differently, as you will see. (Though, a level block also exists there.)}
+\section{Conclusion}
+When you start building a new level for your project, then these are your tasks, recommended in this order:
+\begin{enumerate}
+\item Create a PRJ2 level map file.
+\item Add this level to the project.
+\item Check the needful contents of the level script. If your script has less contents than that, then the level is useless in the game.
+\item Check the main settings (in TE) for the level. If they are wrong, then the level is useless in the game.
+\item Check the crucial attachments.
+\item You can try to edit something in the level map - then save it.
+\item Convert the PRJ2 level map into a TEN playable level.
+\item Start the level in the game, try what you have just edited in the map.
+\end{enumerate} \cite{akyv_tutorial}
