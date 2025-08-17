@@ -1,10 +1,24 @@
 \documentclass[12pt, letterpaper]{book}
 
+\usepackage[obeyspaces]{url}
+
 \usepackage[english]{babel}
 
 \usepackage[backend=biber]{biblatex}
 \usepackage{csquotes}
 \addbibresource{references.bib}
+
+\usepackage{graphicx}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
 
 \title{Tomb Editor Manual}
 \author{rickyturaz}
@@ -15,6 +29,7 @@
 \tableofcontents
 
 \include{introduction}
+\include{getting_started}
 \include{game_development}
 
 \printbibliography

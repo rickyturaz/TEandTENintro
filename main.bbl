@@ -19,6 +19,27 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global/global}
+    \entry{akyv_tutorial}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=4acee580fe6ef3b101b3ec3204848474}{%
+           family={AkyV},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{4acee580fe6ef3b101b3ec3204848474}
+      \strng{fullhash}{4acee580fe6ef3b101b3ec3204848474}
+      \strng{fullhashraw}{4acee580fe6ef3b101b3ec3204848474}
+      \strng{bibnamehash}{4acee580fe6ef3b101b3ec3204848474}
+      \strng{authorbibnamehash}{4acee580fe6ef3b101b3ec3204848474}
+      \strng{authornamehash}{4acee580fe6ef3b101b3ec3204848474}
+      \strng{authorfullhash}{4acee580fe6ef3b101b3ec3204848474}
+      \strng{authorfullhashraw}{4acee580fe6ef3b101b3ec3204848474}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.tombraiderforums.com/showthread.php?t=229293}}
+      \field{title}{TEN - How to start building a new project, a new level}
+    \endentry
     \entry{trle_manual}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=b411ed3c6d757449c42d92ff0e03795e}{%
