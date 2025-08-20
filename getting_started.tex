@@ -178,3 +178,128 @@ What happened now are:
 Now you can click on the arrow menu option in the menu of the blue TIDE icon to go back to the Start page of TIDE.
 %\\ But TIDE now asks you if you want to save what you have just did. Naturally accept it. \\ (However, operations you did in TIDE are automatically saved. Except if those are rows typed in the script.) % It was not asked to save by the application during testing of this tutorial...
 
+\chapter{Time to run the first (default) room}
+
+\section{Open your level in \emph{Tomb Editor}}
+Once you're in the TombIDE start page, double click on your project \emph{Lara's Newest Adventure} to open it (or alternatively, select the project and click on the "Open selected project" button), then:
+\begin{itemize}
+    \item double click on your "Test Level 1"
+    \item or alternatively, select "Test Level 1", then click on the icon in the upper part of the Level, similar to a green prysm. This is the icon of the \emph{Tomb Editor}.
+\end{itemize}
+This action will open the Tomb Editor (\ref{fig:te1000}).
+
+\begin{figure}
+    \centering
+     \includegraphics[width=1\textwidth]{screenshots/1000.png}
+     \caption{\emph{Tomb Editor} main screen}
+     \label{fig:te1000} 
+\end{figure}
+
+\section{Default level properties}
+When you create a new level, by default the TombIDE tool creates for you a very basic level, containing one squared room, having size 18x18x3.
+We'll discuss about size later on in details, talking about blocks, rooms and their properties.
+\par For now, just look in front of you: you can see the square room represented in a tridimensional view. You can check this is the 3D view of a rectangular cuboid, by left-clicking on the room and moving the mouse while keeping the left button of the mouse pressed.
+\par Please note, this room created by default:
+\begin{itemize}
+    \item \textbf{is already textured in white} - in other words, basically is fully painted in white color (floor, walls and ceiling).
+    \item is dark, since no lights are defined by default. Don't worry about that, we'll plenty discuss about lights later on.
+\end{itemize}
+Now you're not able to see here this room is white and dark: please, trust me for now.
+\par Hey! Do you remember we talked about the \emph{crucial attachments}? Well, when you create a new level, TombIDE automatically adds:
+\begin{itemize}
+    \item a default \emph{item file}, or WAD, that is a revisited version of objects from TR4
+    \item a default \emph{texture file}, containing a single white texture the whole room is automatically "painted" with, as above mentioned
+    \item default \emph{sound files and their catalog}, from TR4 as well
+\end{itemize}
+For now, don't worry about where you can check and change the attachments in Tomb Editor: we'll discuss the through entire chapters dedicated to each of them later on.
+
+\section{Wait! Something is missing...}
+
+There's only one step before we can play the level. Guess what is missing? Our Lara.
+\par This is a general rule:
+\begin{remark}
+A level can be played only if Lara's object is placed into the level.
+\end{remark}
+To place Lara in the room, it's enough to (\ref{fig:temovelara}):
+\begin{itemize}
+    \item left click on a floor box inside the room
+    \item click on "Move Lara"
+\end{itemize}
+Now you can see Lara is placed in the room.
+
+\begin{figure}
+    \centering
+     \includegraphics[width=1\textwidth]{screenshots/1001.png}
+     \caption{Placing Lara}
+     \label{fig:temovelara} 
+\end{figure}
+
+\section{Ready to play your first room?}
+All done! Now we can build the level and play it by alternatively:
+\begin{itemize}
+    \item press F5 on the keyboard
+    \item or click on the "Build level and play (F5)" button in the top menu.
+\end{itemize}
+Now the Tomb Engine will build the level for you and run it.
+\par Well, I know: it's a unique, squared room all painted in white and you'll need to close the game manually cause we've not set anything but Lara's position, neither the end of the level. But, \textbf{congratulations}! You've build and run your first level successfully.
+
+\chapter{Main contents of the level scripts}
+All the script files for a TEN project are available in \path{Engine \ Scripts} subfolder of the project main folder.
+Some of them are not important for us now, and some of them won't be important even later. - So let's see which script files are important, when you start building a new level:
+\begin{itemize}
+    \item \path{Gameflow.lua}
+    \item \path{Strings.lua}
+    \item \path{.lua} file with the key level name (in \path{Levels} subfolder of the \path{Scripts} folder), i.e. \path{Test1.lua} now.
+\end{itemize}
+
+You can open and edit these script using whatever text editor you'd like. However, there are two integrated ways to open scripts in TombIDE:
+\begin{itemize}
+    \item Scripting Studio in TombIDE
+    \item Visual Studio Code
+\end{itemize}
+
+But, first of all: why these files have \path{.lua} extension?
+
+\section{What is Lua?}
+
+\textbf{Lua} is a lightweight and high-level programming language designed mainly for embedded use in applications. Lua is cross-platform software.
+
+\par In video game development, Lua is widely used as a scripting language, mainly due to its perceived ease of embedding, fast execution, and short learning curve. Notable games which use Lua include \emph{Roblox, Garry's Mod, World of Warcraft, Payday 2, Phantasy Star Online 2, Dota 2, Crysis} and many others. Some games that do not natively support Lua programming or scripting have this function added by mod.
+
+\par In 2003, a poll conducted by GameDev.net showed that Lua was the most popular scripting language for game programming. \cite{LUA_Wikipedia}
+
+\par Scripts written in Lua language have \path{.lua} file extension.
+
+
+\section{Scripting Studio in TIDE}
+Once opened the project in TombIDE, you can open the integrated Scripting Studio clicking on the icon \emph{Scripting Studio} on the left. Naturally this is the page where you can edit your script.
+\par The main parts of this page are (\ref{fig:TIDEScriptingStudio}):
+\begin{itemize}
+    \item Dropdown menu.
+    \item Toolbar with buttons.
+    \item The big window to see/edit the script: any text you can see here is some textual data for your game/level. Or, if a row starts with a \path{--} sign, that means the row is just a comment, a note, so you can type anything here.
+    % Verifica se usare path o usare già un ambiente di codice con LUA, sezione immediatamente successiva direi
+    \item File Explorer panel on the right side: Here you can find all the available script files of the project.
+Click on any file name of File Explorer, to open that file in the big window.
+There are tabs above the window, for the script files are just open there. Gameflow.lua are always open initially. (Naturally you can close any tab if you just doesn't care about it any more.) Click on any of those tabs to see its contents in the window.
+\end{itemize}
+
+\begin{figure}
+    \centering
+     \includegraphics[width=1\textwidth]{screenshots/19.jpg}
+     \caption{TombIDE Scripting Studio}
+     \label{fig:TIDEScriptingStudio} 
+\end{figure}
+
+\section{Visual Studio Code \index{Visual Studio Code} \index{VSCode}}
+
+\subsection{What is VS Code}
+\textbf{Visual Studio Code (VS Code)} is an integrated development environment developed by Microsoft for Windows, Linux, macOS and web browsers. Features include support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded version control with Git. Users can change the theme, keyboard shortcuts and preferences, as well as install extensions that add functionality.
+
+\par Visual Studio Code is proprietary software released under the "Microsoft Software License", but based on the MIT licensed program named "Visual Studio Code - Open Source" (also known as "Code - OSS"), also created by Microsoft and available through GitHub.
+
+\par In the 2024 Stack Overflow Developer Survey, out of 58,121 responses, 73.6\% of respondents reported using Visual Studio Code, more than twice the percentage of respondents who reported using its nearest alternative, Visual Studio. \cite{VSCode_Wikipedia}
+
+\subsection{Integration with TIDE}
+Once installed VS Code on your PC, you can click on the \emph{Open Project in Visual Studio Code...} button on the left side of TombIDE. This action opens VS Code automatically placed on the \path{Engine \ Scripts} folder and opens the \path{Gameflow.lua} script.
+\par Furthermore, if not installed already, TIDE will propose you to install the \emph{Lua language server} extension in VS Code \footnote{The \emph{Lua language server} extension provides various language features for Lua to make development easier and faster. With nearly a million installs in Visual Studio Code, it is the most popular extension for Lua language support.}.
