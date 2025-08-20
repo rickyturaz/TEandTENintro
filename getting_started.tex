@@ -303,3 +303,75 @@ There are tabs above the window, for the script files are just open there. Gamef
 \subsection{Integration with TIDE}
 Once installed VS Code on your PC, you can click on the \emph{Open Project in Visual Studio Code...} button on the left side of TombIDE. This action opens VS Code automatically placed on the \path{Engine \ Scripts} folder and opens the \path{Gameflow.lua} script.
 \par Furthermore, if not installed already, TIDE will propose you to install the \emph{Lua language server} extension in VS Code \footnote{The \emph{Lua language server} extension provides various language features for Lua to make development easier and faster. With nearly a million installs in Visual Studio Code, it is the most popular extension for Lua language support.}.
+
+\section{Gameflow.lua}
+
+This script file exists initially in TE pack, and always very simple. However, it is crucial, your level won't run in the game (properly) if you do not set here the main data of the level (properly).
+Gameflow.lua is is separated into three parts with the 
+\begin{lstlisting}[style=lua]
+--------------------------------------------------
+\end{lstlisting}
+ rows (which are comments, because they are start with 
+\begin{lstlisting}[style=lua]
+--
+\end{lstlisting}
+signs):
+\begin{itemize}
+    \item In the first (uppermost) part there are some \textbf{general settings of the game}, like eg. the maximum number of secrets. - This part is unimportant to us now (because their default values are nicely useable - or, at least, their effect is currently irrelevant), so we skip it.
+    \item In the second (middle) part you can find the \textbf{level block for the title}, existing initially. Yes, as I said, technically the title is also a level - but we won't discuss it now, it is not a title tutorial. What matters is it works nicely for your project even now, so now you don't need to care about its default script values or any other part. (Though, as I said, it is not the well-known The Last Revelation title, but something much simpler.) \\ However, you need to know that not the "title" name turns a level into title, but the fact that its level block is the first (uppermost) level block in Gameflow.lua.
+    \item In the third (lowest) part you can find the \textbf{level blocks for all the "real" (i.e. non-title) levels of your game}. This part is initially empty, but, when a wizard creates a level for the project, then the level block for this level will be automatically created (placed in the order of creating those levels).
+\end{itemize}
+
+So what we are interested in now is how this level block looks for \path{Test1.prj2}, which the rows and their default values are in this block.
+Initial level block rows are simple commands for that level. ("Officially" I shouldn't call them commands, but something else. However, I bet you will remember them more easily, if I call them commands. In latter tutorials we will be more precise, but in a basic one like this it is enough.) - These commands are, from above to bottom (technically the command order doesn't really seem important here, though):
+
+\begin{lstlisting}[style=lua]
+Test1 = TEN.Flow.Level()
+\end{lstlisting}
+
+This command indicates that here starts a level block. The Test1 tag of the command indicates that all the commands of this block will start with this tag.
+
+\begin{lstlisting}[style=lua]
+Test1.nameKey = "Test1"
+\end{lstlisting}
+
+It tells that the name key of this level will be Test1. (Please notice that title level has no name key defined this way.)
+As you can see, the command tag is the name key you set. But it is not necessary, you can change the tag manually even now, so they will be different. (Technically you can also change the name key manually - but don't forget to change it in all the places where it is already used.)
+
+\begin{lstlisting}[style=lua]
+Test1.scriptFile = "Scripts\\Levels\\Test1.lua"
+\end{lstlisting}
+
+As I told above, there should be a LUA file with the name key of the level in \path{Scripts\Levels} folder, which file is defined here. (Please notice that \path{\\} sign are used instead of \path{\} sign.)
+
+\begin{lstlisting}[style=lua]
+Test1.ambientTrack = "110"
+\end{lstlisting}
+
+As you set it previously, the initial ambience background noise for the level should be 110.wav.
+
+\begin{lstlisting}[style=lua]
+Test1.horizon1.enabled = true
+\end{lstlisting}
+As you set it previously, the sky above you can be visible in the outdoor areas of the level. (That is why it is "true".) Please note from \path{horizon1} that even more than one horizon are available at the same time.
+
+\begin{lstlisting}[style=lua]
+Test1.levelFile = "Data\\Test1.ten"
+\end{lstlisting}
+As I told above, the playable level that belongs to Test1.prj2 level map should be called Test1.ten. And, as I also told above, each TEN file will be automatically available in \path{Engine\Data} subfolder of the project main folder, including Test1.ten. These infos are defined here.
+
+\begin{lstlisting}[style=lua]
+Test1.loadScreenFile = "Screens\\loading.png"
+\end{lstlisting}
+
+This command sets the image shown when the game loads that level - this is \path{loading.jpg} now, should be placed in \path{Engine\Screens} subfolder of the project main folder.
+
+\begin{lstlisting}[style=lua]
+TEN.Flow.AddLevel(Test1)
+\end{lstlisting}
+
+This command tells that the level block for the level with Test1 tag name (not Test1 name key!) ends here, and the playable level with these block parameters is set as a part of this game.
+\\
+\par These default values are proper for our purposes, so we won't change them now. (But you can naturally do that later, though.)
+
+Be awared it's possible to create Test1.prj2 level map file manually: in that case, you'll need to add this level block manually to Gameflow.lua as well. We'll see how to create a level manually later on. %Da fare
