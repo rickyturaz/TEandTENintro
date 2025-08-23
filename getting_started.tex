@@ -1,5 +1,16 @@
 % Verificare utilizzo della parola "tutorial" per eventualmente rimuoverla. Lo scopo del libroo è avere un manuale completo, non solo un tutorial.
 
+% Capitolo in ballo:
+% \chapter{Starting a new level map}
+% \section{Manually using Tomb Editor}
+% Sono abbastanza scettico sul lasciare questo capitolo in questa sezione. Si può sicuramente ricordare che quanto troviamo nel livello creato dal wizard non lo troveremo se creiamo un livello a mano. Ma a mio parere è al momento inutile spiegare come creare a mano un livello ed aggiungerlo a mano. Può servire presumibilmente, al momento, per ricordare i componenti fondamentali...
+
+% NOTA BENE: valutare in fase di revisione se parlare di Crucial Attachment. In realtà anche gli script LUA sono cruciali ed hanno la medesima importanza sostanziale del WAD, delle texture e del catalogo suoni. Secondo me tutti questi concetti hanno la stessa rilevanza ai fini di una trattazione più esaustiva possibile.
+
+% NOTA BENE: la prima parte del tutorial di AkyV da cui è tratta questa prima parte del manuale è fondamentale per questo primo capitolo. Tuttavia ne sto cambiando la struttura ed alcune parti in prima battuta, in quanto:
+% - è pensata per chi era già un builder con i vecchi editor TRLE / NGLE, si evince chiaramente leggendolo. Mentre questo manuale è pensato per un dilettante (allo sbaraglio :) )..
+% - richiama più volte come creare manualmente un livello. A mio parere non è rilevante all'inizio. In prima battuta, serve capire le componenti fondamentali necessarie ad un livello per funzionare, partendo da quello che il wizard ha fatto per te ed analizzandolo. Poi entrando nel merito di WAD e quant'altro, il lettore dovrebbe arrivare a capire che si può fare tutto a manella, man mano che approfondisce i concetti (il che mi sembra piuttosto ovvio), incluso lo stesso PRJ2 con Tomb Editor.
+
 \part{Getting started}
 
 \chapter{Starting a new project}
@@ -260,7 +271,7 @@ The User Interface of Tomb Editor is composed by different panels or \emph{windo
 
 \begin{figure}
     \centering
-     \includegraphics[width=1\textwidth]{screenshots/2025-08-23 17_29_21-Tomb Editor 1.9.2 - Test1.png}
+     \includegraphics[width=1\textwidth]{screenshots/1002.png}
      \caption{Placing Lara}
      \label{fig:TEUI} 
 \end{figure}
@@ -269,7 +280,7 @@ Panels can be hidden or shown, using the \path{Window} menu bar. As well, here y
 \par Panels can be moved within the interface, placing them where you prefer by dragging and dropping their title.
 
 
-\chapter{Main contents of the level scripts}
+\chapter{Level scripts}
 All the script files for a TEN project are available in \path{Engine \ Scripts} subfolder of the project main folder.
 Some of them are not important for us now, and some of them won't be important even later. - So let's see which script files are important, when you start building a new level:
 \begin{itemize}
@@ -446,7 +457,7 @@ When you do this, a panel pops up (\ref{fig:TIDEnewfile}). Set here the file rou
      \label{fig:TIDEnewfile}
 \end{figure}
 
-\chapter{Main TE settings for the level}
+\chapter{Level settings}
 
 The main TE settings for a level map can be checked in dropdown \path{Tools\Level Settings} menu, in Tomb Editor once opened the level.
 
@@ -479,19 +490,28 @@ If the wizard created the PRJ2 file for you, then the values here always should 
 
 \chapter{The WAD}
 
-Open Test1.prj2 in TE now, and check these.
+When TombIDE created the level for us, it automatically attached to it what we defined as item file, or \emph{WAD}. We can check it in Tomb Editor, by looking at the \emph{Item browser} panel (\ref{fig:TEItemBrowser}): we can find objects there, Lara's first.
+\par This is the WAD2 which has been automatically attached to Test1.prj2, when the wizard created this PRJ2. Yes, this WAD2 is not an item file with the custom objects you want for your level - however, its contents is a proper object set to start learning how to handle Moveable objects and sprites in TEN. (This WAD2 has no Static objects - but I am sure soon you will be able to add easily Statics to this, with WadTool program.)
+\par This WAD2 is called \path{TombEngine.wad2}, and you can find it in \path{Assets\Wads} subfolder of the project main folder. This WAD2 is also available in Tomb Editor main folder, same subfolder.
+\par \path{TombEngine.wad2} is a basic TEN WAD2 file made and mantained by TEN developers, which contains a TEN-specific Lara, some other TEN specific-objects - and also some other, general (but surely TEN-compatible) objects, which are needful to edit a level.
+\par We'll deep dive contents of the WAD for Tomb Engine in later chapters.
 
-\section{WAD2 file}
-As I said above, in TE you can select more than one WAD2 file for a TEN level. - But, for a basic tutorial like this, only one WAD2 attached is enough to us to start editing the level. That is why we are examining now only one WAD2 attached to Test1.prj2.
+\begin{figure}
+    \centering
+     \includegraphics[width=1\textwidth]{screenshots/12.jpg}
+     \caption{\emph{Item browser} panel, with a WAD loaded (on the right) vs. without (on the left)}
+     \label{fig:TEItemBrowser} 
+\end{figure}
 
+\chapter{Texture file}
 
-% Capitolo in ballo:
-% \chapter{Starting a new level map}
-% \section{Manually using Tomb Editor}
-% Sono abbastanza scettico sul lasciare questo capitolo in questa sezione. Si può sicuramente ricordare che quanto troviamo nel livello creato dal wizard non lo troveremo se creiamo un livello a mano. Ma a mio parere è al momento inutile spiegare come creare a mano un livello ed aggiungerlo a mano. Può servire presumibilmente, al momento, per ricordare i componenti fondamentali...
+You remember the room you played was fully painted in white? Well, this was because when we created the level, TombIDE automatically attached into the level a simple 64x64 pixel white image with grey borders, placed into the \path{Assets\Wads} and called \path{default.png}.
+\par You can check it by looking at the \emph{Texture} panel (\ref{fig:TEDefaultTexture}).
+\par The whole room is painted, or more precisely \emph{textured} using that image.
 
-% NOTA BENE: valutare in fase di revisione se parlare di Crucial Attachment. In realtà anche gli script LUA sono cruciali ed hanno la medesima importanza sostanziale del WAD, delle texture e del catalogo suoni. Secondo me tutti questi concetti hanno la stessa rilevanza ai fini di una trattazione più esaustiva possibile.
-
-% NOTA BENE: la prima parte del tutorial di AkyV da cui è tratta questa prima parte del manuale è fondamentale per questo primo capitolo. Tuttavia ne sto cambiando la struttura ed alcune parti in prima battuta, in quanto:
-% - è pensata per chi era già un builder con i vecchi editor TRLE / NGLE, si evince chiaramente leggendolo. Mentre questo manuale è pensato per un dilettante (allo sbaraglio :) )..
-% - richiama più volte come creare manualmente un livello. A mio parere non è rilevante all'inizio. In prima battuta, serve capire le componenti fondamentali necessarie ad un livello per funzionare, partendo da quello che il wizard ha fatto per te ed analizzandolo. Poi entrando nel merito di WAD e quant'altro, il lettore dovrebbe arrivare a capire che si può fare tutto a manella, man mano che approfondisce i concetti (il che mi sembra piuttosto ovvio), incluso lo stesso PRJ2 con Tomb Editor.
+\begin{figure}
+    \centering
+     \includegraphics[width=1\textwidth]{screenshots/1003.png}
+     \caption{\emph{Texture} panel with \emph{default.png} texture loaded}
+     \label{fig:TEDefaultTexture} 
+\end{figure}
