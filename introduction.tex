@@ -1,5 +1,8 @@
 \part{Introduction}
 \chapter{History of Tomb Raider Level Editors}
+% Questo capitolo va certamente arricchito. Per il momento qui sono riportate soltanto le citazioni prese dalle fonti. Va spiegato come si è arrivati al Tomb Editor, includendo che non è più possibile usare i vecchi editor e che quindi da qui si arriva alla nascita del Tomb Editor.
+% Sarebbe di enorme aiuto poter ricevere contributi significativi da parte dei diretti interessati (quali Paolone e Monty, oppure i main developers).
+% Due parole sulla straordinaria community che gira intorno ai livelli custom le inserirei.
 \section{Back to 2000: \emph{Tomb Raider Level Editor} \index{Tomb Raider Level Editor}\index{TRLE}}
 Tomb Raider marked a sensational new approach to 3rd person gaming. Fans not only fell in love with Lara and her moves, but with the imaginative and intriguing worlds of her adventures. It all started with Lara's visit to some Egyptian ruins back in 1996, and now with the release of the Tomb Raider Level Editor has come full circle, offering a different sort of adventure in another Egyptian setting. \emph{Tomb Raider Chronicles} marks the end of the line of Tomb Raider games made with these development tools; but rather than viewing this as an end, the release of the editor makes it seem more like a beginning...
 \par The \textbf{Tomb Raider Level Editor (TRLE)} includes a tutorial that will walk you through the basics needed to create your own stand alone Tomb Raider levels (but please read the legal disclaimer about commercial use of this product). Even though you will not be able to edit objects or animations (that means Lara’s outfits), you have a wonderful variety of object sets from which to choose. You can sculpt and design on many different ‘levels’ – trigger events, create awe-inspiring spaces, simple to complex…and as you experiment you will learn more about what can be done, and quite possibly discover new methods of applying the knowledge you have acquired.
@@ -13,10 +16,37 @@ The \textbf{Next Generation Level Editor}, often abbreviated \textbf{NGLE}, is a
 \section{MontyTRC89's \emph{Tomb Editor}}
 \textbf{Tomb Editor (TE)} is a level editor designed for the full range of classic Tomb Raider game series (1-5), as well as for contemporary engine reimplementation projects and game engines designed for community modding and level building. \cite{TE_github}
 
-\chapter{Basic concepts to know about Tomb Raider}
-% Inserire qui i concetti fondamentali relativi a Tomb Raider, da sapere. Ad esempio, se parlo di TR4 devi sapere di cosa si parla. Scherzaci un po' su: se sei qui a leggere questo manuale, un po' Lara ti deve piacere, no?! :)
+\chapter{Editor and engines}
 
-\chapter{Engines}
+It's time to introduce some fundamental definitions before actually getting started.
+
+\begin{remark}
+A \textbf{Tomb Raider editor} is an application used to make Tomb Raider games.
+\end{remark}
+
+\textbf{In this book we'll use the \emph{Tomb Editor}, also abbreviated in \emph{TE}.}
+% Tutto il materiale da cui sto prendendo spunto abbrevia Tomb Editor in TE. Valutare se è più chiaro usare l'acronimo TED, in contrapposizione a TEN.
+\par It's fundamental to know what is an engine:
+
+\begin{remark}
+A \textbf{Tomb Raider engine} refers to the software framework used to run the Tomb Raider games.
+\end{remark}
+
+\begin{remark}
+Each Tomb Raider game can use one and only one engine, to be chosen during game development in the Tomb Raider editor.
+\end{remark}
+
+There are several engines available, all supported by the Tomb Editor:
+\begin{itemize}
+    \item \textbf{Tomb Raider 1 TR1X} and \textbf{Tomb Raider 2 TR2X} by \emph{Lost Artefacts Team}: these are enhanced engines for Tomb Raider 1 and 2, offering smooth, true 60 FPS gameplay and expanded creative tools. They preserve the original feel while adding flexibility through full game-flow scripting in a simple JSON format, and an injection system that unlocks new features and removes engine limitations.
+    \item \textbf{Tomb Raider 2 TR2Main} by \emph{Arsunt} and \textbf{Tomb Raider 3 tomb3} by \emph{Troye}: these are the original Tomb Raider 2 and 3 engines with numerous bug fixes and restore features from the console versions. From lightning to UI elements and gameplay details, they bring back lost aspects which are fully customizable by the players. Both engines utilize a game-flow scripting language for simple gameplay tweaks, while keeping the experience authentic.
+    \item \textbf{Tomb Raider 4 Original TRLE} by \emph{Core Design}: this is the original, unmodified Tomb Raider 4 engine, exactly as it was released with the original TRLE editor. Perfect for creators seeking to build custom levels within the classic, traditional framework. \emph{This engine has never received any update since its original release. It may not function correctly on model systems.}
+    \item \textbf{Tomb Raider Next-Generation} by \emph{Paolone}: this enhanced Tomb Raider 4 engine, featuring the Next-Generation addon, expands creative possibilities with advanced scripting tools and a plugin system. It gives level builders greater control over gameplay mechanics, allowing for complex interactions, custom events and deeper game logic customization. \emph{Some anti-virus software, including \emph{Windows Defender}, may flag this engine as a false positive. This engine is known to not function correctly on modern systems. External software, such as \emph{dgVoodoo}, might be required for proper operation.}
+    \item \textbf{Tomb Engine} by \emph{MontyTRC89 and The Tomb Engine Team}: Tomb Engine is a powerful and flexible engine with modern enhancements, including 60 FPS rendering, SSAO, dynamic shadows, and more. Built for both experienced developers and newcomers, it offers advanced features while remaining easy to use. With Lua programming support and an intuitive node system, it allows for deep customization and creativity. \emph{This engine is actively being developed, and changes to the scripting API may occur.}
+\end{itemize}
+
+\textbf{In this book, we'll use \emph{Tomb Engine}, abbreviated into \emph{TEN}}.
+
 % Spiega la differenza fra editor ed engine, va spiegata. Spiega i vari engine disponibili.
 
 \chapter{Installing Tomb Editor}
