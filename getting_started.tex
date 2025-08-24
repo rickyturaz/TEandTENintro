@@ -490,11 +490,13 @@ If the wizard created the PRJ2 file for you, then the values here always should 
 
 \chapter{The WAD}
 
-When TombIDE created the level for us, it automatically attached to it what we defined as item file, or \emph{WAD}. We can check it in Tomb Editor, by looking at the \emph{Item browser} panel (\ref{fig:TEItemBrowser}): we can find objects there, Lara's first.
+\section {\emph{Item browser} panel}
+
+When TombIDE created the level for us, it automatically attached to it what we defined as item file, or \emph{WAD}. At a glance, we can check it in Tomb Editor, by looking at the \emph{Item browser} panel (\ref{fig:TEItemBrowser}): we can find objects there, Lara's first.
 \par This is the WAD2 which has been automatically attached to Test1.prj2, when the wizard created this PRJ2. Yes, this WAD2 is not an item file with the custom objects you want for your level - however, its contents is a proper object set to start learning how to handle Moveable objects and sprites in TEN. (This WAD2 has no Static objects - but I am sure soon you will be able to add easily Statics to this, with WadTool program.)
 \par This WAD2 is called \path{TombEngine.wad2}, and you can find it in \path{Assets\Wads} subfolder of the project main folder. This WAD2 is also available in Tomb Editor main folder, same subfolder.
 \par \path{TombEngine.wad2} is a basic TEN WAD2 file made and mantained by TEN developers, which contains a TEN-specific Lara, some other TEN specific-objects - and also some other, general (but surely TEN-compatible) objects, which are needful to edit a level.
-\par We'll deep dive contents of the WAD for Tomb Engine in later chapters.
+\par We'll deep dive contents of the WAD for Tomb Engine, including compatibility, in later chapters.
 
 \begin{figure}
     \centering
@@ -503,7 +505,22 @@ When TombIDE created the level for us, it automatically attached to it what we d
      \label{fig:TEItemBrowser} 
 \end{figure}
 
+\section {Level settings for WADs}
+
+General way to check which WADs have been loaded into the level is through the \emph{Level settings} - as already seen, we can check the level settings through main drop down menu, \emph{Tools} and then \emph{Level settings...}.
+\par Under the \emph{Object Files} section of level settings (\ref{fig:TEWADSettings}) we can check the \path{TombEngine.wad2} is used and has been successfully loaded.
+\par Actually this page is a list which can contain more than one WAD file: in fact, in TE you can select more than one item file for a level and if an object is there in both, then you can set which one of them should be applied in the level. Now it's enough to know this feature exists: we'll find out more about later on.
+
+\begin{figure}
+    \centering
+     \includegraphics[width=1\textwidth]{screenshots/1004.png}
+     \caption{List of loaded WADs in \emph{Level settings}}
+     \label{fig:TEWADSettings} 
+\end{figure}
+
 \chapter{Texture file}
+
+\section {\emph{Texture} panel}
 
 You remember the room you played was fully painted in white? Well, this was because when we created the level, TombIDE automatically attached into the level a simple 64x64 pixel white image with grey borders, placed into the \path{Assets\Wads} and called \path{default.png}.
 \par You can check it by looking at the \emph{Texture} panel (\ref{fig:TEDefaultTexture}).
@@ -514,4 +531,15 @@ You remember the room you played was fully painted in white? Well, this was beca
      \includegraphics[width=1\textwidth]{screenshots/1003.png}
      \caption{\emph{Texture} panel with \emph{default.png} texture loaded}
      \label{fig:TEDefaultTexture} 
+\end{figure}
+
+\section {Level settings for textures}
+
+Similarly as for WADs, you can check which texture files your level is using through the Level settings - section \emph{Texture Files} (\ref{fig:TETextureSettings}).
+
+\begin{figure}
+    \centering
+     \includegraphics[width=1\textwidth]{screenshots/1005.png}
+     \caption{List of loaded textures in \emph{Level settings}}
+     \label{fig:TETextureSettings} 
 \end{figure}
