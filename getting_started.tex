@@ -267,7 +267,7 @@ Now you can see Lara is placed in the room.
 \section{Ready to play your first room?}
 All done! Now we can build the level and play it by alternatively:
 \begin{itemize}
-    \item press F5 on the keyboard
+    \item press \keys{F5} on the keyboard
     \item or click on the "Build level and play (F5)" button in the top menu.
 \end{itemize}
 Now the Tomb Engine will build the level for you and run it.
@@ -575,7 +575,31 @@ Let's analyze now what TombIDE done to make us hear the proper sounds in the gam
 
 
 \chapter{Tomb Editor \emph{modes}}
-% Spiega le 4 viste fondamentali disponibili in Tomb Editor, fondamentali in fase di progettazione di un livello: 2D mode, 3D mode, Face Edit (texture) mode e Lightning mode. Serve per capire come vedere le diverse caratteristiche del livello ed introdurre alcuni concetti fondamentali, oltre che per chiudere il cerchio dell'introduzione, vedendo come la stanza è stata texturizzata.
+Get back to the main Tomb Editor window. We'll learn now there are 4 different ways you can see you level, according to what you actually need to do.
+First of all, you can find the four modes as the very first menu buttons (\ref{fig:TEModesInToolbar}).
+Here they are:
+\begin{itemize}
+    \item \textbf{2D mode}: identified by the \emph{2D} icon, shows the level map as \emph{seen from the sky}. Keyboard shortcut to activate this mode is \keys{F1}.
+    \item \textbf{3D mode}: identified by the \emph{3D} icon, shows the level represented in a 3D view. This is the default mode when you open a level. Keyboard shortcut to activate this mode is \keys{F2}.
+    \item \textbf{Face Edit (texture) mode}: identified by the \emph{palette} icon, shows the level as the 3D view, plus showing textures applied to the surfaces (floor, walls and ceiling). Keyboard shortcut to activate this mode is \keys{F3}.
+    \item \textbf{Lightning mode}: identified by the \emph{light bulb} icon, shows the level as the Face Edit mode, plus previewing how lights are rendered on surfaces (floor, walls and ceiling). Keyboard shortcut to activate this mode is \keys{F4}.
+\end{itemize}
+
+In the screenshot (\ref{fig:TEModesInToolbar}) you can see I've actually highlighted for you 5 buttons. The fifth button on the right, with the \emph{light bulb on a paper sheet}, is actually an option of the \emph{lightning mode} - that's why it's there close to it. This option, called \textbf{Drawn untextured in Lightning Mode}, hides the textures in the lightning mode if activated, allowing to see you attributes of lights you've added in your level, as if surfaces hadn't been textured. You can toggle it on and off by just clicking the button. %Magari fai un esempio del perché questa modalità è utile.
+
+\par \emph{Please note}: now we've learnt about the modes and how to switch between them. We'll go deeper into details about usage of each one, while we learn things step by step together. For now, what I ask you to do is to:
+\begin{enumerate}
+    \item switch back and forth between the \emph{3D mode} and the \emph{Face Edit mode} (remember: \keys{F3} and \keys{F4} keys).
+    \item Note the difference between them: in Face Edit mode, you can see the surfaces of the room have been textured by TombIDE, using that fully-white texture we've checked before.
+    \item \emph{Just remember this will be the place where we'll apply textures}.
+\end{enumerate}
+
+\begin{figure}
+    \centering
+     \includegraphics[width=1\textwidth]{screenshots/1008.png}
+     \caption{\emph{Modes} buttons in main toolbar}
+     \label{fig:TEModesInToolbar} 
+\end{figure}
 
 \chapter{Convert the level map into a playable level}
 % Spiegare cosa ha fatto l'F5. Vedi sempre ultimo capitolo del tutorial di AkyV.
