@@ -265,13 +265,28 @@ Now you can see Lara is placed in the room.
 \end{figure}
 
 \section{Ready to play your first room?}
+Please note by placing Lara into the level, we actually introduced a change that is lost, unless we save it.
+\par Everytime we update the level, we can acknowledge about unsaved changes by looking at the Tomb Editor window title: if there are unsaved changes, a star characted will appear near to the level title (\ref{fig:TEUnsavedChanges}). Anyway, if you close the window forgetting the changes, the editor will ask you if you want to save them.
+\par To save changes for this level, you can alternatively:
+\begin{itemize}
+    \item Click on \path{File > Save level} main menu entry.
+    \item Use \keys{\ctrl + S} on the keyboard.
+\end{itemize}
+
+\begin{figure}
+    \centering
+     \includegraphics[width=1\textwidth]{screenshots/1009.png}
+     \caption{Marker for unsaved changes}
+     \label{fig:TEUnsavedChanges} 
+\end{figure}
+
 All done! Now we can build the level and play it by alternatively:
 \begin{itemize}
     \item press \keys{F5} on the keyboard
     \item or click on the "Build level and play (F5)" button in the top menu.
 \end{itemize}
 Now the Tomb Engine will build the level for you and run it.
-\par Well, I know\dots it's a unique, squared room all painted in white where Lara is trapped forever into: you'll need to close the game manually, cause we've not set anything but Lara's position, neither a way out of the room nor anything to say to the game the level is actually finished. But, \textbf{congratulations}! You've build and run your first level successfully.
+\par Well, I know\dots it's a unique, squared room all painted in white where Lara is trapped forever into: you'll need to close the game manually (please note a quick way is using key combination \keys{\Alt + F4}), cause we've not set anything but Lara's position, neither a way out of the room nor anything to say to the game the level is actually finished. But, \textbf{congratulations}! You've build and run your first level successfully.
 \begin{center}
   $\ast$~$\ast$~$\ast$
 \end{center}
@@ -602,4 +617,12 @@ In the screenshot (\ref{fig:TEModesInToolbar}) you can see I've actually highlig
 \end{figure}
 
 \chapter{Convert the level map into a playable level}
-% Spiegare cosa ha fatto l'F5. Vedi sempre ultimo capitolo del tutorial di AkyV.
+When we tested our first level before using the "Build level and play (F5)" function, what we actually made the application do is:
+\begin{enumerate}
+    \item put all the stuffs we defined in previous chapters together;
+    \item \emph{mix them up} to create the playable file for our level and save it into the \path{Engine \ Data} subfolder of our project. If you open this folder, you'll find the \path{Test1.ten} file, updated when you built your level the last time.
+    \item open the game, starting from that playable level.
+\end{enumerate}
+
+\section{Wrap-up}
+\emph{That's all for the introduction!} Together we've created our first level, played it, seen the main components of TombIDE and Tomb Editor user interfaces and had an overview of the main \emph{building blocks} of a level and a simple game containing just it.
