@@ -1,0 +1,51 @@
+\part{Rooms: geometry and design}
+
+\chapter{Introduction}
+
+\section{Blocks, sectors and clicks}
+
+\textbf{Blocks, sequares, sectors and clicks}: get used to these terms because you'll hear them frequently. The Tomb Editor is designed to work with a basic \emph{building block}, proportioned to Lara and her movements.
+\par Levels are built by connecting a series of rooms comprised of walls and building blocks. The floor and ceiling of these rooms are sectioned into squares or sectors. The building blocks are created when you raise a square up from the floor or lower one down from the ceiling. Four mouse clicks up or down equals the width of these squares sections and creates a perfect cube \emph{Remember all those "blocks" Lara pushed and pulled around?!}
+\par The building blocks are not limited to cubes and columns with flat tops. Corners of the surfaces can be pulled up or down to create angled slopes and \emph{organic} surfaces - great for creating rocky caves or sand dunes. \cite{trle_manual}
+
+\section{Basic definitions}
+
+Let's start with the default room: in the previous part, we've learnt that when we create a new level, TombIDE creates for us a level containing one room having size 18x18x3. Ok but.. 18x18x3 what?
+
+It's time to introduce some formal definitions, forming a common dictionary.
+
+\begin{remark}
+    Property of a room is its area, measured in \emph{sectors} or \emph{squares}.
+\end{remark}
+
+For our default room, its area is 18 squares. We can see it looking at the Sector Options, or switching to the 2D mode in Tomb Editor.
+
+\begin{remark}
+    Given a room, the area of its floor is equal to the area of its ceiling.
+\end{remark}
+
+\begin{remark}
+    Number of floor sectors is equal to number of ceiling sectors.
+\end{remark}
+
+Now, recall in mind a way to define position of objects in the three-dimensional space we live our life: the cartesian coordinate system, where we use the three axes \( x, y, z\).
+Up to now, we cared about \(x\) and \(y\). Let's introduce the way we can set \(z\) coordinate (height) and so, clicks:
+
+\begin{remark}
+    A \textbf{click} is the minimum linear transformation can be applied to a floor or a ceiling sector to increase or decrease its height.
+\end{remark}
+
+By using clicks, we can make a block.
+
+\begin{remark}
+    A block is the solid shape we can obtain by applying clicks to floor (raising) or ceiling (lowering).
+\end{remark}
+
+Finally, we reach the definition of the \emph{Tomb Raider cube}:
+\begin{remark}
+    A \emph{Tomb Raider cube} is a cube-shaped block, where every edge is 4 clicks long.
+\end{remark}
+
+The definition of the Tomb Raider cube is useful because being the easiest possible 3D solid, it's a simple way to remember Lara's sizes compared to her world and the real world.
+Let's compare Lara's sizes and her movements with the cube, to better understand.
+% Riscrivi questa frase per chiarirla meglio e rivedi il contenuto di questa sezione per vedere se si capisce...
