@@ -103,7 +103,7 @@ You can deactivate the fly mode anytime through \keys{ESC}.
 Settings for 3D controls can be changed by the \path{Tools - Editor Options}, then \path{3D controls panel}.
 \par In particular, please note you can customize the \textbf{Fly Mode move speed} here.
 
-\chapter{Modeling room geometry}
+\chapter{Modeling blocks and holes}
 
 \section{Selecting sectors}
 
@@ -114,7 +114,11 @@ Now that we know how to move our point of view in the room, let's see how we can
 \item In the \path{Sector Options} panel by \keys{LMB}: a \textbf{single} click selects a single sector, by moving the mouse keeping the button pressed you can select bigger areas.
 \end{itemize}
 
-\textbf{Please note}: take care of carefully single click here and do not click more than one time. We'll see afterwards what happens when you click more than one time.
+Selected area:
+\begin{itemize}
+    \item will be highlighted in red in the main editor window and its border will appear red as well in the \path{Sector Options} panel. \textbf{Please note}: take care of carefully single click here and do not click more than one time. We'll see afterwards what happens when you click more than one time;
+    \item is described in the \emph{room box info} panel of the Tomb Editor: here you'll find start and end position of the selection, as well as the its size.
+\end{itemize}
 
 \par To \textbf{deselect} a sector or a bunch of sectors, just press \keys{ESC}.
 
@@ -137,6 +141,8 @@ You'll see while you move the mouse up, selected floor raises step by step - or,
 
 \par Similarly, you can create a block from the ceiling, by clicking on the selected area on the ceiling, but moving the mouse down this time.
 
+\par Building blocks will actually change the height of the selected area: you can check it in the \emph{room box info} panel of Tomb Editor (look at \( y = [f, c] \)).
+
 \section{Creating an hole}
 
 In the same way, we can set holes in the floor and ceiling, by reversing the mouse movement, that is:
@@ -145,5 +151,54 @@ In the same way, we can set holes in the floor and ceiling, by reversing the mou
     \item for the ceiling, move the mouse up.
 \end{itemize}
 
+\par Digging holes will actually change the height of the selected area: you can check it in the \emph{room box info} panel of Tomb Editor (look at \( y = [f, c] \)).
+
 \section{Keyboard shortcuts}
-% To be completed
+Once one or more sectors are selected, there are some useful shortcuts can be used for quickly creating blocks and holes, which are:
+\begin{itemize}
+    \item For the floor:
+    \begin{itemize}
+        \item \keys{Q}: raises the floor 1 step up.
+        \item \keys{A}: lowers the floor 1 step down.
+    \end{itemize}
+    \item For the ceiling:
+    \begin{itemize}
+        \item \keys{W}: raises the ceiling 1 step up.
+        \item \keys{S}: lowers the ceiling 1 step down.
+    \end{itemize}
+\end{itemize}
+
+These shortcuts can be used in the same way also when squares are raised or lowered by one of their edges or corners.
+
+\chapter{Selecting and trasforming edges and corners}
+
+\section{Edges}
+
+Once one or more squares are selected (by pressing \keys{LMB} just once or via drag and drop), we said you can see them highlighted in red.
+\par If you furtherly click on the selected area, you'll see a white arrow appears in each selected square. The arrow points to the specific edge of the square the further transformation will be applied to.
+\par By using now the \emph{Drag} command - or the shortcuts \keys{QAWS} we mentioned before - you'll see the raising or lowering transformation will be applied \emph{to the selected edge only} (or edges, if more than one square is selected).
+
+\par If you further click, you'll see the arrow rotates. Generally, once the selection is done, edges are switched clockwisely:
+\begin{itemize}
+    \item \textbf{1 \keys{LMB}}: selects north edge;
+    \item \textbf{2 \keys{LMB}}: selects east edge;
+    \item \textbf{3 \keys{LMB}}: selects south edge;
+    \item \textbf{4 \keys{LMB}}: selects west edge;
+    \item \textbf{5 \keys{LMB}}: resets edge selection (all edges are transformed together).
+\end{itemize}
+
+\begin{remark}
+    In a floor/ceiling selection, if no specific edge is selected (means, no arrow is shown), all the edges will be raised or lowered together according to the applied transformation.
+\end{remark}
+
+\section{Corners}
+
+Once selected a floor/ceiling area highlighted in red, if we press \keys{CTRL} key while clicking, we'll be able to select corners of the square, instead of edges. You can see it because arrows now point to the corners of the squares.
+\par Here, once the selection is done, corners are switched clockwisely:
+\begin{itemize}
+    \item \textbf{1 \keys{LMB}}: selects north-west corner;
+    \item \textbf{2 \keys{LMB}}: selects north-east corner;
+    \item \textbf{3 \keys{LMB}}: selects south-east corner;
+    \item \textbf{4 \keys{LMB}}: selects south-west corner;
+    \item \textbf{5 \keys{LMB}}: resets corner/edge selection (all corners and edges are transformed together).
+\end{itemize}
