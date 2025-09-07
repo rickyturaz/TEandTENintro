@@ -4,7 +4,7 @@
 
 \section{Blocks, sectors and clicks}
 
-\textbf{Blocks, sequares, sectors and clicks}: get used to these terms because you'll hear them frequently. The Tomb Editor is designed to work with a basic \emph{building block}, proportioned to Lara and her movements.
+\textbf{Blocks, squares, sectors and clicks}: get used to these terms because you'll hear them frequently. The Tomb Editor is designed to work with a basic \emph{building block}, proportioned to Lara and her movements.
 \par Levels are built by connecting a series of rooms comprised of walls and building blocks. The floor and ceiling of these rooms are sectioned into squares or sectors. The building blocks are created when you raise a square up from the floor or lower one down from the ceiling. Four mouse clicks up or down equals the width of these squares sections and creates a perfect cube \emph{Remember all those "blocks" Lara pushed and pulled around?!}
 \par The building blocks are not limited to cubes and columns with flat tops. Corners of the surfaces can be pulled up or down to create angled slopes and \emph{organic} surfaces - great for creating rocky caves or sand dunes. \cite{trle_manual}
 
@@ -15,10 +15,16 @@ Let's start with the default room: in the previous part, we've learnt that when 
 It's time to introduce some formal definitions, forming a common dictionary.
 
 \begin{remark}
-    Property of a room is its area, measured in \emph{sectors} or \emph{squares}.
+    Property of a room is its \textbf{area}, measured in \emph{sectors} or \emph{squares}. This corresponds to the area of room's floor and room's ceiling, excluding walls.
 \end{remark}
 
-For our default room, its area is 18 squares. We can see it looking at the Sector Options, or switching to the 2D mode in Tomb Editor.
+For our default room, its area is 18 squares. We can check it by alternatively counting squares in the Editor Windows, looking at the Sector Options or switching to the 2D mode in Tomb Editor.
+
+Please note in the 3D view:
+\begin{itemize}
+    \item in the main editor window, floor and ceiling are represented in light blue color, while walls are represented in green;
+    \item in the Sector Options panel, floor and ceiling are represented in light blue color, while walls are represented in grey.
+\end{itemize}
 
 \begin{remark}
     Given a room, the area of its floor is equal to the area of its ceiling.
@@ -28,24 +34,116 @@ For our default room, its area is 18 squares. We can see it looking at the Secto
     Number of floor sectors is equal to number of ceiling sectors.
 \end{remark}
 
-Now, recall in mind a way to define position of objects in the three-dimensional space we live our life: the cartesian coordinate system, where we use the three axes \( x, y, z\).
+Now, recall in mind a way to define position of objects in the three-dimensional space we live our life: we can rely on the cartesian coordinate system, where we use the three axes \( x, y, z\).
 Up to now, we cared about \(x\) and \(y\). Let's introduce the way we can set \(z\) coordinate (height) and so, clicks:
 
 \begin{remark}
-    A \textbf{click} is the minimum linear transformation can be applied to a floor or a ceiling sector to increase or decrease its height.
+    A \textbf{click} or full step is a linear transformation can be applied to a floor or a ceiling sector to increase or decrease its height.
 \end{remark}
 
 By using clicks, we can make a block.
 
 \begin{remark}
-    A block is the solid shape we can obtain by applying clicks to floor (raising) or ceiling (lowering).
+    A \textbf{block} is the solid shape we can obtain by applying clicks to floor (raising) or ceiling (lowering).
 \end{remark}
 
 Finally, we reach the definition of the \emph{Tomb Raider cube}:
 \begin{remark}
-    A \emph{Tomb Raider cube} is a cube-shaped block, where every edge is 4 clicks long.
+    A \textbf{Tomb Raider cube} is a cube-shaped block, where every edge is 4 clicks long.
 \end{remark}
 
-The definition of the Tomb Raider cube is useful because being the easiest possible 3D solid, it's a simple way to remember Lara's sizes compared to her world and the real world.
-Let's compare Lara's sizes and her movements with the cube, to better understand.
-% Riscrivi questa frase per chiarirla meglio e completa con immagine 1010.png che non hai aggiunto; rivedi il contenuto di questa sezione per vedere se si capisce...
+The definition of the Tomb Raider cube is useful because it's a simple way to remember Lara's sizes compared to her world and the real world.
+Let's compare Lara's sizes and her movements with the cube, to better understand (\ref{fig:TIDELaraAndCube}).
+
+\begin{remark}
+    Lara's height is \emph{3 clicks}.
+\end{remark}
+
+\begin{remark}
+    Assuming Lara's real height is 1.80m according to the original story \cite{wikiraider_LaraCroft}, a \emph{click} is 60cm and a \emph{Tomb Raider cube} is 2.40m high.
+\end{remark}
+
+\begin{figure}
+    \centering
+     \includegraphics[width=1\textwidth]{screenshots/1010.png}
+     \caption{Lara compared to the Tomb Raider cube.}
+     \label{fig:TIDELaraAndCube} 
+\end{figure}
+
+In the next chapter we'll check together all the ways Tomb Editor provides us to model our room geometry. But before, we need to understand how we can move ourselves in the space.
+
+\section{Tomb Editor 3D controls}
+
+Open \emph{Test Level 1} we've created in the previous chapters. By default, the view is pointing to the north, to the center of the room, seen from above (45 degrees).
+\par There are plenty of ways to move our view, basically looking at room and its contents from a different point in the space. Let's examine the available options.
+
+\begin{itemize}
+    \item \textbf{\keys{MW}}: by moving mouse wheel up and down, we can respectively increase or decrease the zoom. Geometrically, we are moving the camera along the vector perpendicular to its plan.
+    \item \textbf{\keys{RMB} or \keys{\arrowkeyup \arrowkeydown \arrowkeyleft \arrowkeyright }}: by keeping the right mouse button down and moving the mouse, we can rotate the camera. Geometrically, we're moving the camera along the sphere centered to the point in front of our view. We can use arrow keys as well.
+    \item \textbf{\keys{{MMB}}}: by keeping the scroll wheel button down and moving the mouse, we'll move the center of our view horizontally or vertically. Geometrically, we're moving the camera along its plan.
+    \item \textbf{\path{View - Relocate camera} or \keys{ALT + z}}: mouse pointer will change to a cross. By \keys{LMB} we'll be able to set the new center of our view.
+\end{itemize}
+
+To \textbf{reset the camera position to its default} (useful in case you lost yourself), you can use \path{View - Reset camera position} or \keys{F6}.
+
+\subsection{Fly mode}
+
+There's another funny and useful way to move our point of view, through the \emph{fly mode}. Fly mode is activated by \path{View - Toggle fly mode} or \keys{SHIFT + z}.
+\par Once activated, it's like being a fly! You can move your camera by combining:
+\begin{itemize}
+    \item mouse movement;
+    \item \keys{WASDQE} keys;
+    \item \keys{SHIFT} to go faster.
+\end{itemize}
+
+You can deactivate the fly mode anytime through \keys{ESC}.
+
+\subsection{3D controls options}
+
+Settings for 3D controls can be changed by the \path{Tools - Editor Options}, then \path{3D controls panel}.
+\par In particular, please note you can customize the \textbf{Fly Mode move speed} here.
+
+\chapter{Modeling room geometry}
+
+\section{Selecting sectors}
+
+Now that we know how to move our point of view in the room, let's see how we can select sectors.
+\par Sectors can be selected either:
+\begin{itemize}
+\item In the editor window by \keys{LMB}: a \textbf{single} click selects a single sector, by moving the mouse keeping the button pressed you can select bigger areas.
+\item In the \path{Sector Options} panel by \keys{LMB}: a \textbf{single} click selects a single sector, by moving the mouse keeping the button pressed you can select bigger areas.
+\end{itemize}
+
+\textbf{Please note}: take care of carefully single click here and do not click more than one time. We'll see afterwards what happens when you click more than one time.
+
+\par To \textbf{deselect} a sector or a bunch of sectors, just press \keys{ESC}.
+
+\section{Creating a block}
+
+Once a floor sector (or bunch of sectors) is selected, please check carefully: if you rotate the view in order to see both floor and ceiling together, you'll see not only the floor is selected, but also the ceiling. This is very important.
+
+\begin{remark}
+    Selecting a floor area selects the corresponding area of the ceiling and viceversa.
+\end{remark}
+
+To create a block from the floor:
+\begin{itemize}
+    \item select the \textbf{Drag} command in the Tool Palette (floating);
+    \item \keys{LMB} click on the selected area on the floor, keeping the button down;
+    \item move the mouse up.
+\end{itemize}
+
+You'll see while you move the mouse up, selected floor raises step by step - or, using definitions we introduced before, \emph{click by click}.
+
+\par Similarly, you can create a block from the ceiling, by clicking on the selected area on the ceiling, but moving the mouse down this time.
+
+\section{Creating an hole}
+
+In the same way, we can set holes in the floor and ceiling, by reversing the mouse movement, that is:
+\begin{itemize}
+    \item for the floor, move the mouse down;
+    \item for the ceiling, move the mouse up.
+\end{itemize}
+
+\section{Keyboard shortcuts}
+% To be completed
