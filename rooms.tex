@@ -132,7 +132,7 @@ Once a floor sector (or bunch of sectors) is selected, please check carefully: i
 
 To create a block from the floor:
 \begin{itemize}
-    \item select the \textbf{Drag} command in the Tool Palette (floating);
+    \item select the \textbf{Drag} command \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_Drag-16.png} in the Tool Palette;
     \item \keys{LMB} click on the selected area on the floor, keeping the button down;
     \item move the mouse up.
 \end{itemize}
@@ -168,37 +168,50 @@ Once one or more sectors are selected, there are some useful shortcuts can be us
     \end{itemize}
 \end{itemize}
 
-These shortcuts can be used in the same way also when squares are raised or lowered by one of their edges or corners.
+These shortcuts can be used in the same way also when squares are raised or lowered by one of their sides or corners.
 
-\chapter{Selecting and trasforming edges and corners}
+\chapter{Selecting and trasforming sides and corners}
 
-\section{Edges}
+\section{Sides}
 
 Once one or more squares are selected (by pressing \keys{LMB} just once or via drag and drop), we said you can see them highlighted in red.
-\par If you furtherly click on the selected area, you'll see a white arrow appears in each selected square. The arrow points to the specific edge of the square the further transformation will be applied to.
-\par By using now the \emph{Drag} command - or the shortcuts \keys{QAWS} we mentioned before - you'll see the raising or lowering transformation will be applied \emph{to the selected edge only} (or edges, if more than one square is selected).
+\par If you furtherly click on the selected area, you'll see a white arrow appears in each selected square. The arrow points to the specific side of the square the further transformation will be applied to.
+\par By using now the \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_Drag-16.png} command - or the shortcuts \keys{QAWS} we mentioned before - you'll see the raising or lowering transformation will be applied \emph{to the selected side only} (or sides, if more than one square is selected).
 
-\par If you further click, you'll see the arrow rotates. Generally, once the selection is done, edges are switched clockwisely:
+\par If you further click, you'll see the arrow rotates. Generally, once the selection is done, sides are switched clockwisely:
 \begin{itemize}
-    \item \textbf{1 \keys{LMB}}: selects north edge;
-    \item \textbf{2 \keys{LMB}}: selects east edge;
-    \item \textbf{3 \keys{LMB}}: selects south edge;
-    \item \textbf{4 \keys{LMB}}: selects west edge;
-    \item \textbf{5 \keys{LMB}}: resets edge selection (all edges are transformed together).
+    \item \textbf{1 \keys{LMB}}: selects north side;
+    \item \textbf{2 \keys{LMB}}: selects east side;
+    \item \textbf{3 \keys{LMB}}: selects south side;
+    \item \textbf{4 \keys{LMB}}: selects west side;
+    \item \textbf{5 \keys{LMB}}: resets side selection (all sides are transformed together).
 \end{itemize}
 
 \begin{remark}
-    In a floor/ceiling selection, if no specific edge is selected (means, no arrow is shown), all the edges will be raised or lowered together according to the applied transformation.
+    In a floor/ceiling selection, if no specific side is selected (means, no arrow is shown), all the sides will be raised or lowered together according to the applied transformation.
 \end{remark}
 
 \section{Corners}
 
-Once selected a floor/ceiling area highlighted in red, if we press \keys{CTRL} key while clicking, we'll be able to select corners of the square, instead of edges. You can see it because arrows now point to the corners of the squares.
+Once selected a floor/ceiling area highlighted in red, if we press \keys{CTRL} key while clicking, we'll be able to select corners of the square, instead of sides. You can see it because arrows now point to the corners of the squares.
 \par Here, once the selection is done, corners are switched clockwisely:
 \begin{itemize}
     \item \textbf{1 \keys{LMB}}: selects north-west corner;
     \item \textbf{2 \keys{LMB}}: selects north-east corner;
     \item \textbf{3 \keys{LMB}}: selects south-east corner;
     \item \textbf{4 \keys{LMB}}: selects south-west corner;
-    \item \textbf{5 \keys{LMB}}: resets corner/edge selection (all corners and edges are transformed together).
+    \item \textbf{5 \keys{LMB}}: resets corner/side selection (all corners and sides are transformed together).
+\end{itemize}
+
+\chapter{Tools in \emph{Tool palette}}
+
+Now that we know how to select sectors, sides and corners of floors and ceilings, it's time to have a look one by one to all the tools available in the tool palette.
+
+\begin{itemize}
+    \item \textbf{Selection} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_Selection-16.png}: this is the tool for perform selections. It's active by default and was active when we learnt how to select sectors.
+    \item \textbf{Brush} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_Paint-16.png}: when a selection is active, this tool creates \emph{smooth} blocks in \keys{LMB} clicked floor/ceiling sectors within selection, up to 4 clicks. If no selection has been done, transformation is done directly where you click.
+    \item \textbf{Shovel} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_Shovel-16.png}: when a selection is active, this tool creates \emph{smooth} holes in \keys{LMB} clicked floor/ceiling sectors within selection, up to 4 clicks. If no selection has been done, transformation is done directly where you click.
+    \item \textbf{Pencil} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_Pencil-16.png}: when a selection is active, this tool creates 1 click-high square block in \keys{LMB} clicked floor/ceiling sectors within selection. If no selection has been done, transformation is done directly where you click.
+    \item \textbf{Bulldozer} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_Bulldozer_1-16.png}: given a sector where corners are not at the same height, it sets height of all corners to the minimum height of the corners, actually \emph{flatting} the sector. Using drag and drop to other contiguous sectors it propagates the same transformation to them. Used within a selection, it applies only to selected squares - otherwise, where you click. \textbf{Please note}: this transformation doesn't apply simmetrically if used on ceiling or floor.
+    \item \textbf{Smooth} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_Smooth-16.png}: if a surface presents 90° edges between two connected points, this tool removes them making the surface smoother. Used within a selection, it applies only to selected squares - otherwise, where you click.
 \end{itemize}
