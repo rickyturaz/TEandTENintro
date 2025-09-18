@@ -1,4 +1,4 @@
-\part{Rooms: geometry and design}
+\part{Rooms: floors and ceilings}
 
 \chapter{Introduction}
 
@@ -203,9 +203,9 @@ Once selected a floor/ceiling area highlighted in red, if we press \keys{CTRL} k
     \item \textbf{5 \keys{LMB}}: resets corner/side selection (all corners and sides are transformed together).
 \end{itemize}
 
-\chapter{Tools in \emph{Tool palette}}
+\chapter{Related tools in palette}
 
-Now that we know how to select sectors, sides and corners of floors and ceilings, it's time to have a look one by one to all the tools available in the tool palette.
+Now that we know how to select sectors, sides and corners of floors and ceilings, it's time to have a look one by one to all the tools available in the \emph{tool palette}.
 
 \begin{itemize}
     \item \textbf{Selection} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_Selection-16.png}: this is the tool for perform selections. It's active by default and was active when we learnt how to select sectors.
@@ -214,4 +214,50 @@ Now that we know how to select sectors, sides and corners of floors and ceilings
     \item \textbf{Pencil} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_Pencil-16.png}: when a selection is active, this tool creates 1 click-high square block in \keys{LMB} clicked floor/ceiling sectors within selection. If no selection has been done, transformation is done directly where you click.
     \item \textbf{Bulldozer} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_Bulldozer_1-16.png}: given a sector where corners are not at the same height, it sets height of all corners to the minimum height of the corners, actually \emph{flatting} the sector. Using drag and drop to other contiguous sectors it propagates the same transformation to them. Used within a selection, it applies only to selected squares - otherwise, where you click. \textbf{Please note}: this transformation doesn't apply simmetrically if used on ceiling or floor.
     \item \textbf{Smooth} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_Smooth-16.png}: if a surface presents 90° edges between two connected points, this tool removes them making the surface smoother. Used within a selection, it applies only to selected squares - otherwise, where you click.
+    % \item \textbf{Portal Digger} \includegraphics[scale=1]{Resources/icons_toolbox/toolbox_PortalDigger-16.png}: let's skip it for now, we'll talk about this in later chapters. 
 \end{itemize}
+
+\chapter{Steps height}
+
+When we defined a \emph{click}, we said we can call it a \emph{full step}. This is because we can decrease the step used by transformations we apply.
+\par Step height can be:
+\begin{itemize}
+    \item Full: its height is 256 \emph{what?} %che cosa sarebbe 256? pixel?
+    \item Half: its height is 128
+    \item Quarter: its height is 64
+    \item Eighth: its height is 32
+\end{itemize}
+This setting can be changed either by:
+\begin{itemize}
+    \item using the \emph{Step height} dropdown menu in main editor window
+    \item through keyboard shortcuts \keys{ì} (increase) and \keys{'} (decrease).
+\end{itemize}
+\begin{remark}
+    By default, transformations applied by the editor (raising or lowering floor and ceiling sectors) use a full step, unless we change this settings.
+\end{remark}
+
+\chapter{Related transformations}
+
+Through the \path{Transform} menu, we can apply some massive transformations to geometry of room floor and ceiling.
+
+\section{Transformations applicable to selections}
+
+First of all, let's examine the ones applicable \textbf{only if a selection is active}.
+
+\begin{itemize}
+    \item \textbf{Smooth random}: transformations randomly increasing or decreasing floor or ceiling \emph{smoothly} - that is, producing no 90° angles between any points of the surface. These are:
+    \begin{itemize}
+        \item \textbf{Smooth random floor up}: raises floor (shortcut: \keys{\ctrl + \Alt + A});
+        \item \textbf{Smooth random floor down}: lowers floor (shortcut: \keys{\ctrl + \Alt + B});
+        \item \textbf{Smooth random ceiling up}: raises ceiling (shortcut: \keys{\ctrl + \Alt + C});
+        \item \textbf{Smooth random ceiling down}: lowers ceiling (shortcut: \keys{\ctrl + \Alt + D}).
+    \end{itemize}
+    \item \textbf{Sharp random}: transformations randomly increasing or decreasing floor or ceiling \emph{sharply} - that is, producing 90° angles between points of the surface. These are:
+    \begin{itemize}
+        \item \textbf{Sharp random floor up}: raises floor (shortcut: \keys{\ctrl + \Alt + E});
+        \item \textbf{Sharp random floor down}: lowers floor (shortcut: \keys{\ctrl + \Alt + F});
+        \item \textbf{Sharp random ceiling up}: raises ceiling (shortcut: \keys{\ctrl + \Alt + G});
+        \item \textbf{Sharp random ceiling down}: lowers ceiling (shortcut: \keys{\ctrl + \Alt + H}).
+    \end{itemize}
+\end{itemize}
+
