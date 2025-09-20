@@ -217,28 +217,35 @@ Now that we know how to select sectors, sides and corners of floors and ceilings
     % \item \textbf{Portal Digger} \includegraphics[scale=1]{Resources/icons_toolbox/toolbox_PortalDigger-16.png}: let's skip it for now, we'll talk about this in later chapters. 
 \end{itemize}
 
-\chapter{Steps height}
+\chapter{\emph{Mix all them up!}}
 
-When we defined a \emph{click}, we said we can call it a \emph{full step}. This is because we can decrease the step used by transformations we apply.
-\par Step height can be:
-\begin{itemize}
-    \item Full: its height is 256 \emph{what?} %che cosa sarebbe 256? pixel?
-    \item Half: its height is 128
-    \item Quarter: its height is 64
-    \item Eighth: its height is 32
-\end{itemize}
-This setting can be changed either by:
-\begin{itemize}
-    \item using the \emph{Step height} dropdown menu in main editor window
-    \item through keyboard shortcuts \keys{ì} (increase) and \keys{'} (decrease).
-\end{itemize}
-\begin{remark}
-    By default, transformations applied by the editor (raising or lowering floor and ceiling sectors) use a full step, unless we change this settings.
-\end{remark}
+Now that we understood how to apply clicks, to a whole sector or its edges and corners and we know which tools are available in our toolbox, it's time to perform a step further by talking about how we can mix up all ingredients, to easily apply complex transformations to our floor and ceiling geometry.
+
+% TO DO: descrivi il comportamento dei tool quando indichi una direzione con le frecce
+
+\section{The ALT modifier}
+
+While using tools, by pressing the \keys{\Alt} key we can change the tool behavior, in ways different \emph{tool by tool}. Let's check them up.
+
+\subsection{Drag and ALT}
+
+While using the \textbf{Drag} command \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_Drag-16.png}, if you keep pressed the \keys{\Alt} key while pressing \keys{LMB} and moving the mouse, you'll see the editor keeps the outside sectors next to the selection linked to the sectors we're raising or lowering - that is, \emph{edges are smoothly updated coherently}. If you just release the \keys{\Alt} key while applying the transformation, you'll see the tool switches to the default behavior.
+\par This is useful to easily create square pools with a smooth border, for instance. 
+
+% Finisci di descrivere cosa fa l'ALT applicato ad ogni tool - il behavior è diverso!
+
 
 \chapter{Related transformations}
 
 Through the \path{Transform} menu, we can apply some massive transformations to geometry of room floor and ceiling.
+
+Before proceeding, we need to introduce a definition related to sectors: the \emph{quad}.
+
+\begin{remark}
+    Given a sector delimited by four points or corners, a \textbf{quad} is a sector where all four corners are belonging to the same plan in space.
+\end{remark}
+
+The editor 3D view helps you checking if a sector is a quad at a glance: it's a quad if there's no diagonal line draw on it, while it's not a quad otherwise.
 
 \section{Transformations applicable to selections}
 
@@ -259,5 +266,59 @@ First of all, let's examine the ones applicable \textbf{only if a selection is a
         \item \textbf{Sharp random ceiling up}: raises ceiling (shortcut: \keys{\ctrl + \Alt + G});
         \item \textbf{Sharp random ceiling down}: lowers ceiling (shortcut: \keys{\ctrl + \Alt + H}).
     \end{itemize}
+    \item \textbf{Convert to quads}: in case there are non-quads sectors into the selected floor or ceiling, these transformations converts these sectors into quads. These are:
+    \begin{itemize}
+        \item \textbf{Convert floor to quads}: applies to the selected floor;
+        \item \textbf{Convert ceiling to quads}: applies to the selected ceiling.
+    \end{itemize}
+    \item \textbf{Smooth}: transformations \emph{smoothing} selected floor or ceiling, by removing all 90° angles between two points. These are:
+    \begin{itemize}
+        \item \textbf{Smooth floor}: applies to the selected floor;
+        \item \textbf{Smooth ceiling}: applies to the selected ceiling.
+    \end{itemize}
+    \item \textbf{Average}: given selected sectors, this transformation converts each one into a flat quad, high as the average of the height of the former corners the sector was made. These are:
+    \begin{itemize}
+        \item \textbf{Average floor}: applies to the selected floor (shortcut: \keys{\ctrl + \Alt + I});
+        \item \textbf{Average ceiling}: applies to the selected ceiling (shortcut: \keys{\ctrl + \Alt + J}).
+    \end{itemize}
 \end{itemize}
 
+\section{Transformations applicable to selections or whole rooms}
+
+Let's examine now the ones applicable \textbf{either if a selection is active or not}. Please note: if a selection is active, transformation applied to it; otherwise, it applies to the whole room.
+
+\begin{itemize}
+    \item \textbf{Flatten}: given selected sectors, this transformation \emph{flats} them to flat quads, high as the minimum height (floor) or maximum height (ceiling) of the points in the whole selection. These are:
+    \begin{itemize}
+        \item \textbf{Flatten floor}: applies to the selected floor;
+        \item \textbf{Flatten ceiling}: applies to the selected ceiling.
+    \end{itemize}
+    \item \textbf{Reset all geometry}: applies both \textbf{Flatten floor} and \textbf{Flatten ceiling} with a single click.
+\end{itemize}
+
+\chapter{Steps height}
+
+When we defined a \emph{click}, we said we can call it a \emph{full step}. This is because we can decrease the step used by transformations we apply.
+\par Step height can be:
+\begin{itemize}
+    \item Full: its height is 256 \emph{what?} %che cosa sarebbe 256? pixel?
+    \item Half: its height is 128
+    \item Quarter: its height is 64
+    \item Eighth: its height is 32
+\end{itemize}
+This setting can be changed either by:
+\begin{itemize}
+    \item using the \emph{Step height} dropdown menu in main editor window
+    \item through keyboard shortcuts \keys{ì} (increase) and \keys{'} (decrease).
+\end{itemize}
+\begin{remark}
+    By default, transformations applied by the editor (raising or lowering floor and ceiling sectors) use a full step, unless we change this settings.
+\end{remark}
+
+\section{Related transformations}
+
+Modeling rooms using a step different than the full one (which is the maximum applicable), it could happen you'd like to increase the step height you're using. In this situation, you may want to \emph{reset} floors and ceilings to that step. To do so, once changed the step and selected the area you'd like to reset, you can use \textbf{Re-align to step height} transformations, available in \path{Transform} menu - respectively:
+\begin{itemize}
+    \item \textbf{Re-align floor to step height}: applies to the selected floor;
+    \item \textbf{Re-align ceiling to step height}: applies to the selected ceiling.
+\end{itemize}
