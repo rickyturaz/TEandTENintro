@@ -205,39 +205,9 @@ Once selected a floor/ceiling area highlighted in red, if we press \keys{CTRL} k
 
 \chapter{Related tools in palette}
 
-Now that we know how to select sectors, sides and corners of floors and ceilings, it's time to have a look one by one to all the tools available in the \emph{tool palette}.
+Now that we know how to select sectors, sides and corners of floors and ceilings, it's time to have a look one by one to all the tools available in the \emph{tool palette}, along with their \emph{modifiers}: e.g. while using tools, by pressing the \keys{\Alt} key we can change the tool behavior, in ways different \emph{tool by tool}.
 
-\begin{itemize}
-    \item \textbf{Selection} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_Selection-16.png}: this is the tool for perform selections. It's active by default and was active when we learnt how to select sectors.
-    \item \textbf{Brush} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_Paint-16.png}: when a selection is active, this tool creates \emph{smooth} blocks in \keys{LMB} clicked floor/ceiling sectors within selection, up to 4 clicks. If no selection has been done, transformation is done directly where you click.
-    \item \textbf{Shovel} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_Shovel-16.png}: when a selection is active, this tool creates \emph{smooth} holes in \keys{LMB} clicked floor/ceiling sectors within selection, up to 4 clicks. If no selection has been done, transformation is done directly where you click.
-    \item \textbf{Pencil} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_Pencil-16.png}: when a selection is active, this tool creates 1 click-high square block in \keys{LMB} clicked floor/ceiling sectors within selection. If no selection has been done, transformation is done directly where you click.
-    \item \textbf{Bulldozer} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_Bulldozer_1-16.png}: given a sector where corners are not at the same height, it sets height of all corners to the minimum height of the corners, actually \emph{flatting} the sector. Using drag and drop to other contiguous sectors it propagates the same transformation to them. Used within a selection, it applies only to selected squares - otherwise, where you click. \textbf{Please note}: this transformation doesn't apply simmetrically if used on ceiling or floor.
-    \item \textbf{Smooth} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_Smooth-16.png}: if a surface presents 90° edges between two connected points, this tool removes them making the surface smoother. Used within a selection, it applies only to selected squares - otherwise, where you click.
-    % \item \textbf{Portal Digger} \includegraphics[scale=1]{Resources/icons_toolbox/toolbox_PortalDigger-16.png}: let's skip it for now, we'll talk about this in later chapters. 
-\end{itemize}
-
-\chapter{\emph{Mix all them up!}}
-
-Now that we understood how to apply clicks, to a whole sector or its edges and corners and we know which tools are available in our toolbox, it's time to perform a step further by talking about how we can mix up all ingredients, to easily apply complex transformations to our floor and ceiling geometry.
-
-% TO DO: descrivi il comportamento dei tool quando indichi una direzione con le frecce
-
-\section{The ALT modifier}
-
-While using tools, by pressing the \keys{\Alt} key we can change the tool behavior, in ways different \emph{tool by tool}. Let's check them up.
-
-\subsection{Drag and ALT}
-
-While using the \textbf{Drag} command \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_Drag-16.png}, if you keep pressed the \keys{\Alt} key while pressing \keys{LMB} and moving the mouse, you'll see the editor keeps the outside sectors next to the selection linked to the sectors we're raising or lowering - that is, \emph{edges are smoothly updated coherently}. If you just release the \keys{\Alt} key while applying the transformation, you'll see the tool switches to the default behavior.
-\par This is useful to easily create square pools with a smooth border, for instance. 
-
-% Finisci di descrivere cosa fa l'ALT applicato ad ogni tool - il behavior è diverso!
-
-
-\chapter{Related transformations}
-
-Through the \path{Transform} menu, we can apply some massive transformations to geometry of room floor and ceiling.
+\section{\emph{Quads} and \emph{flat quads}}
 
 Before proceeding, we need to introduce a definition related to sectors: the \emph{quad}.
 
@@ -246,6 +216,84 @@ Before proceeding, we need to introduce a definition related to sectors: the \em
 \end{remark}
 
 The editor 3D view helps you checking if a sector is a quad at a glance: it's a quad if there's no diagonal line draw on it, while it's not a quad otherwise.
+
+Then, we introduce now the definition of \emph{flat quad}:
+
+\begin{remark}
+    A \textbf{flat quad} is a quad where all corner points have the same height.
+\end{remark}
+
+\section{List of tools}
+
+\begin{itemize}
+    \item \textbf{Selection} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_Selection-16.png}: this is the tool for perform selections. It's active by default and was active when we learnt how to select sectors.
+    \item \textbf{Brush} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_Paint-16.png}: when a selection is active, this tool creates \emph{smooth} blocks in \keys{LMB} clicked floor/ceiling sectors within selection, up to 4 clicks. If no selection has been done, transformation is done directly where you click.
+    \item \textbf{Shovel} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_Shovel-16.png}: when a selection is active, this tool creates \emph{smooth} holes in \keys{LMB} clicked floor/ceiling sectors within selection, up to 4 clicks. If no selection has been done, transformation is done directly where you click.
+    \item \textbf{Pencil} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_Pencil-16.png}: when a selection is active, this tool creates 1 click-high square block in \keys{LMB} clicked floor/ceiling sectors within selection. If no selection has been done, transformation is done directly where you click.
+    \item \textbf{Bulldozer} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_Bulldozer_1-16.png}: given a sector where corners are not at the same height, it sets height of all corners to the minimum height of the corners, actually \emph{flatting} the sector. Using drag and drop to other contiguous sectors it propagates the same transformation to them. Used within a selection, it applies only to selected squares - otherwise, where you click. \textbf{Please note}: this transformation doesn't apply simmetrically if used on ceiling or floor.
+    \item \textbf{Smooth} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_Smooth-16.png}: if a surface presents 90° edges between two connected points, this tool removes them making the surface smoother. Used within a selection, it applies only to selected squares - otherwise, where you click.
+\end{itemize}
+
+%Nella UI si vede chiaramente che i comandi nella toolbox sono suddivisi in tre sezioni, che vengono qui analogamente suddivisi in tre elenchi distinti. TO DO: da spiegare il perché.
+
+\begin{itemize}
+    \item \textbf{Drag} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_Drag-16.png}: this is the default tool for creating blocks, as described in previous chapters.
+    \par \textbf{Modifiers}:
+    \begin{itemize}
+        \item \keys{\Alt}: while using this command, if you keep pressed the \keys{\Alt} key while pressing \keys{LMB} and moving the mouse, you'll see the editor keeps the outside sectors next to the selection linked to the sectors we're raising or lowering - that is, \emph{edges are smoothly updated coherently}. If you just release the \keys{\Alt} key while applying the transformation, you'll see the tool switches to the default behavior. \\ This is useful to easily create square pools with a smooth border, for instance. 
+    \end{itemize}
+
+    \item \textbf{Ramp} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_GroupRamp-16.png}: given a selection and moving the mouse while keeping \keys{LMB} pressed, this tool creates ramps, upwards or downwards on floors or ceilings.
+    \par \textbf{Modifiers}:
+    \begin{itemize}
+        \item \textbf{Edges and corners}: if you apply this transformation while an edge or a corner is set, the editor will apply the transformation towards the selected direction.
+        \item \keys{\Alt}: while using this command, if you keep pressed the \keys{\Alt} key while pressing \keys{LMB} and moving the mouse, you'll see the editor will apply the required transformation using \emph{flat quads} \emph{as much as possible}. \\ This is useful to easily create stairs, for instance. 
+    \end{itemize}
+
+    \item \textbf{Quarter pipe} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_GroupQuaterPipe-16.png}: given a selection and moving the mouse while keeping \keys{LMB} pressed, this tool creates quarter pipes \footnote{A \emph{quarter pipe} is, literally, quarter of a sphere or pipe.}, upwards or downwards on floors or ceilings.
+    \par \textbf{Modifiers}:
+    \begin{itemize}
+        \item \textbf{Edges and corners}: if you apply this transformation while an edge or a corner is set, the editor will apply the transformation towards the selected direction.
+        \item \keys{\Alt}: while using this command, if you keep pressed the \keys{\Alt} key while pressing \keys{LMB} and moving the mouse, you'll see the editor will apply the required transformation using \emph{flat quads} \emph{as much as possible}. \\ This is useful to easily create stairs, for instance. 
+    \end{itemize}
+
+    \item \textbf{Half pipe} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_GroupHalfPipe-16.png}: given a selection and moving the mouse while keeping \keys{LMB} pressed, this tool creates half pipes \footnote{An \emph{half pipe} is, literally, half of a sphere or pipe.}, upwards or downwards on floors or ceilings.
+    \par \textbf{Modifiers}:
+    \begin{itemize}
+        \item \textbf{Edges and corners}: if you apply this transformation while an edge or a corner is set, the editor will apply the transformation towards the selected direction.
+        \item \keys{\Alt}: while using this command, if you keep pressed the \keys{\Alt} key while pressing \keys{LMB} and moving the mouse, you'll see the editor will apply the required transformation using \emph{flat quads} \emph{as much as possible}.
+    \end{itemize}
+
+    \item \textbf{Bowl} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_GroupBowl-16.png}: given a selection and moving the mouse while keeping \keys{LMB} pressed, this tool creates bowls, upwards or downwards on floors or ceilings.
+    \par \textbf{Modifiers}:
+    \begin{itemize}
+        \item \textbf{Edges and corners}: if you apply this transformation while an edge or a corner is set, the editor will apply the transformation towards the selected direction. \textbf{Please note}: used on corners, this tool is equivalent of the half pipe tool.
+        \item \keys{\Alt}: while using this command, if you keep pressed the \keys{\Alt} key while pressing \keys{LMB} and moving the mouse, you'll see the editor will apply the required transformation using \emph{flat quads} \emph{as much as possible}. \\ This is useful to easily create thrones, for instance. 
+    \end{itemize}
+    
+    \item \textbf{Pyramid} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_GroupPyramid-16.png}: given a selection and moving the mouse while keeping \keys{LMB} pressed, this tool creates pyramids, upwards or downwards on floors or ceilings.
+    \par \textbf{Modifiers}:
+    \begin{itemize}
+        \item \textbf{Edges and corners}: if you apply this transformation while an edge or a corner is set, the editor will apply the transformation towards the selected direction.
+        \item \keys{\Alt}: while using this command, if you keep pressed the \keys{\Alt} key while pressing \keys{LMB} and moving the mouse, you'll see the editor will apply the required transformation using \emph{flat quads} \emph{as much as possible}.
+    \end{itemize}
+
+    \item \textbf{Terrain} \includegraphics[scale=0.5]{Resources/icons_toolbox/toolbox_GroupTerrain-16.png}: given a selection and moving the mouse while keeping \keys{LMB} pressed, this tool creates rough (so, irregular) terrains, keeping them \emph{connected} to the sectors external to the selection (so, with no 90° angles), upwards or downwards on floors or ceilings.
+    \par \textbf{Modifiers}:
+    \begin{itemize}
+        \item \textbf{Edges and corners}: if you apply this transformation while an edge or a corner is set, the editor will apply the transformation towards the selected direction.
+        \item \keys{\Alt}: while using this command, if you keep pressed the \keys{\Alt} key while pressing \keys{LMB} and moving the mouse, you'll see the sectors external to the selection will be \emph{detached} (so, introducing 90° angles).
+    \end{itemize}
+\end{itemize}
+
+\begin{itemize}
+    \item \textbf{Portal Digger} \includegraphics[scale=1]{Resources/icons_toolbox/toolbox_PortalDigger-16.png}: let's skip it for now, we'll talk about this in later chapters, talking about connected rooms. %TODO
+\end{itemize}
+
+
+\chapter{Related transformations}
+
+Through the \path{Transform} menu, we can apply some massive transformations to geometry of room floor and ceiling.
 
 \section{Transformations applicable to selections}
 
